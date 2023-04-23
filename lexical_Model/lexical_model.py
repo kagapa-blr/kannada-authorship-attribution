@@ -1,22 +1,15 @@
-import pickle
-import os.path
-
-from sklearn.svm import SVC
-from sklearn.naive_bayes import GaussianNB
-from sklearn.model_selection import cross_validate
-from sklearn.ensemble import RandomForestClassifier
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.linear_model import LinearRegression
-from itertools import chain
-import scipy
-import pandas as pd
-from sklearn.model_selection import train_test_split
-from imblearn.over_sampling import RandomOverSampler
-from sklearn.metrics import classification_report
-from scipy import sparse 
 import logging
+import os.path
+import pickle
 import sys
+from itertools import chain
 
+import pandas as pd
+import scipy
+from imblearn.over_sampling import RandomOverSampler
+from scipy import sparse
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.model_selection import train_test_split
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 log = logging.getLogger('Lexical Model')

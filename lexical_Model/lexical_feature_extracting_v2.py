@@ -1,22 +1,22 @@
 
 import collections as coll
 import math
-from nltk.tokenize import sent_tokenize
-import nltk
-from sklearn.preprocessing import StandardScaler
 import pickle
 import string
+
+import nltk
 import numpy as np
-from nltk.corpus import cmudict
 import pandas as pd
-from nltk.tokenize import word_tokenize, sent_tokenize
+from nltk.corpus import cmudict
+from nltk.tokenize import sent_tokenize, word_tokenize
+
 cmuDictionary = None
 import os 
 from os import path
 import logging
 import sys
 import re
-from sklearn.model_selection import train_test_split
+
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 log = logging.getLogger('Lexical features extracting new version ....')
 log.setLevel(logging.DEBUG)

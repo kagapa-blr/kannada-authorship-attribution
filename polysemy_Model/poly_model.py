@@ -1,16 +1,12 @@
-import numpy as np # linear algebra
-import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
-from collections import Counter
-from sklearn.model_selection import train_test_split #split data into train and test sets
+import logging
+import pickle
+import sys
+
 import pandas as pd
-import warnings
-from sklearn.metrics import classification_report
+from imblearn.over_sampling import RandomOverSampler
 from sklearn.ensemble import ExtraTreesClassifier
 from sklearn.feature_extraction.text import TfidfVectorizer
-from imblearn.over_sampling import RandomOverSampler
-import pickle
-import logging
-import sys
+from sklearn.model_selection import train_test_split  # split data into train and test sets
 
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 log = logging.getLogger('polysemy Model')
@@ -19,6 +15,7 @@ log.setLevel(logging.DEBUG)
 log.info("importing libraries finished...")
 #read polysemy file
 polysemy_data = pd.read_csv('polysemy_extracted.csv')
+
 poly_emotion_df = polysemy_data
 log.info("file reading finished...")
 X, y = poly_emotion_df['clean_text'], poly_emotion_df['clean_authors']
@@ -65,8 +62,9 @@ with open('accuracy.p', 'wb') as fp:
 # result = loaded_model.score(X_test, y_test)
 
 # log.info(result)
-# pr = loaded_model.predict(X_test)
+#pr = model.predict(X_test)
 
 # log.info(classification_report(y_test, pr))
 
 # this won't be run when imported
+#print(classification_report(y_test, pr))

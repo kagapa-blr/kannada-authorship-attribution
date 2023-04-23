@@ -1,11 +1,11 @@
-from lexical_feature_extracting_v2 import UserInput
-import pickle
-from itertools import chain
-import scipy
-import pandas as pd
-from scipy import sparse 
-import sys
 import os
+import pickle
+
+import scipy
+from scipy import sparse
+
+from lexical_feature_extracting_v2 import UserInput
+
 #final_feature_vec=[]
 # for i in range(len(vectors)):
 #     final_feature_vec.append(list(chain.from_iterable(vectors[i])))

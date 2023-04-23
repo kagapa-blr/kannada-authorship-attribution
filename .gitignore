@@ -2,5 +2,8 @@ __pycache__
 .vscode
 /.idea/*
 *.pkl
+*.sa
 *.sav
 *.zip
+/venv
+/.pytest_cache

@@ -1,15 +1,15 @@
 import logging
-import pickle
-import logging
 import os
+import pickle
 import sys
-from compression_Model import compression_model as cm
-from werkzeug.utils import secure_filename
-#import ngram_model as  nm
-from flask import Flask, request, render_template, jsonify
+
+# import ngram_model as  nm
+from flask import Flask, jsonify, request
 from flask_cors import CORS
 
+from compression_Model import compression_model as cm
 from lexical_Model import ConvertInput
+
 #Initialize the flask App
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 log = logging.getLogger('api.py')
