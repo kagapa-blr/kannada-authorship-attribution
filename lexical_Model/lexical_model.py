@@ -24,7 +24,7 @@ df_instance=pd.read_csv(abs_file_path, encoding='utf-8')
 del df_instance['Unnamed: 0']
 
 log.info("reading feature vector file ..")
-lexical_features_vec = pickle.load(open("lexical_features_new.pkl",'rb'))
+lexical_features_vec = pickle.load(open("lexical_Model/lexical_features_new.pkl",'rb'))
 
 final_feature_vec=[]
 for i in range(len(lexical_features_vec)):

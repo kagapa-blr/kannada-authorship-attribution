@@ -1,8 +1,6 @@
 import warnings
-
 import nltk
 import pandas as pd
-
 warnings.filterwarnings("ignore")
 import bz2
 from sklearn.model_selection import train_test_split
@@ -21,6 +19,7 @@ warnings.filterwarnings("ignore")
 log.info("reading all authors files ...!")
 script_dir = os.path.dirname(__file__)
 rel_path = "../Dataset/All_Authors_dataset.csv"
+#"Dataset/All_Authors_dataset.csv"
 abs_file_path = os.path.join(script_dir, rel_path)
 
 df_instance = pd.read_csv(abs_file_path, encoding='utf-8')
