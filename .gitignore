@@ -7,3 +7,5 @@ __pycache__
 *.zip
 /venv
 /.pytest_cache
+*.p
+polysemy_extracted.csv
