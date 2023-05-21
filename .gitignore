@@ -1,11 +1,11 @@
-__pycache__
-.vscode
+/__pycache__/
+/.vscode/
 /.idea/*
 *.pkl
 *.sa
 *.sav
 *.zip
-/venv
+/venv/
 /.pytest_cache
 *.p
-polysemy_extracted.csv
+/polysemy_extracted.csv/
