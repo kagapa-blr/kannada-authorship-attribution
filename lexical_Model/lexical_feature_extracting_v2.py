@@ -22,11 +22,7 @@ log = logging.getLogger('Lexical features extracting new version ....')
 log.setLevel(logging.DEBUG)
 
 log.info("importing libraries finished...")
-
-
-
-path_of_Stopword="../Backend/Dataset/stopwords.txt"
-file_path = path.relpath(path_of_Stopword)
+file_path = "../Dataset/stopwords.txt"
 file = open(file_path, encoding="utf8")
 stop_words=file.read()
 stopword = list(stop_words)
@@ -328,3 +324,5 @@ def creat_bin_file():
 def UserInput(text):
     clean=text_process(text)
     return FeatureExtration(clean)
+if __name__ == "__main__":
+    creat_bin_file()

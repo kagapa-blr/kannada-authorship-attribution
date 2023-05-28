@@ -37,7 +37,7 @@ def ngram():
     if request.method == 'POST':
         log.info("importing ngram model and vector files")
         root_ngram = os.path.dirname(__file__)
-        poly_model_path = "../Backend/ngram_Model"
+        poly_model_path = "../ngram_Model"
     
         ngram_model_file_path = os.path.join(root_ngram, poly_model_path+"/ngram_attribution.pkl")
         ngram_clf = pickle.load(open(ngram_model_file_path,'rb'))
@@ -91,7 +91,7 @@ def polysemy():
     if request.method == 'POST':
          
         root = os.path.dirname(__file__)
-        poly_model_path = "../Backend/polysemy_Model"
+        poly_model_path = "../polysemy_Model"
         poly_model_file = os.path.join(root, poly_model_path+"/poly_finalized_model.sav")
         poly_vec_file = os.path.join(root, poly_model_path+"/polysem_vect.pkl")
         poly_accuracy_file = os.path.join(root, poly_model_path+"/accuracy.p")
