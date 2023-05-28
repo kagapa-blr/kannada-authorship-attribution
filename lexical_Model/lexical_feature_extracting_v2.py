@@ -22,7 +22,7 @@ log = logging.getLogger('Lexical features extracting new version ....')
 log.setLevel(logging.DEBUG)
 
 log.info("importing libraries finished...")
-file_path = "../Dataset/stopwords.txt"
+file_path = "./Dataset/stopwords.txt"
 file = open(file_path, encoding="utf8")
 stop_words=file.read()
 stopword = list(stop_words)
