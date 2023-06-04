@@ -14,7 +14,7 @@ log.setLevel(logging.DEBUG)
 
 log.info("importing libraries finished...")
 #read polysemy file
-polysemy_data = pd.read_csv('polysemy_extracted.csv')
+polysemy_data = pd.read_csv('polysemy_Model/polysemy_extracted.csv')
 
 poly_emotion_df = polysemy_data
 log.info("file reading finished...")
@@ -40,11 +40,11 @@ model.fit(X_train, y_train)
 log.info("ExtraTreesClassifier model created ")
 
 # save the model to disk
-filename_vect="polysem_vect.pkl"
+filename_vect="polysemy_Model/polysem_vect.pkl"
 x_data = vectorizer.fit(original_Xdata)
 pickle.dump(x_data,open(filename_vect, 'wb'))
 
-filename_model = 'poly_finalized_model.sav'
+filename_model = 'polysemy_Model/poly_finalized_model.sav'
 pickle.dump(model, open(filename_model, 'wb'))
 
 log.info("Sucessfully created files:\n1.polysem_vect.pkl\n2.poly_finalized_model.sav\n")
@@ -53,7 +53,7 @@ poly_accuracy = model.score(X_test, y_test)
 output={}
 output['accuracy']=poly_accuracy
 output['method']='Polysemy'
-with open('accuracy.p', 'wb') as fp:
+with open('polysemy_Model/accuracy.p', 'wb') as fp:
     pickle.dump(output, fp, protocol=pickle.HIGHEST_PROTOCOL)
 
 

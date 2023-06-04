@@ -73,10 +73,10 @@ ngram_accuracy = SVM.score(X_test, y_test)
 
 log.info("Accuracy saved in all_model_Acuuracy file : ")
 saving_tofile = {"ngram_accuracy": ngram_accuracy}
-with open("ngram_model_Acuuracy.pkl", 'ab+') as acFile:
+with open("ngram_Model/ngram_model_Acuuracy.pkl", 'ab+') as acFile:
     pickle.dump(saving_tofile, acFile)
 
 vector = UnionFeater.fit(X)
-pickle.dump(vector, open('ngram_vect.pkl', 'wb'))
-pickle.dump(SVM, open('ngram_attribution.pkl', 'wb'))
+pickle.dump(vector, open('ngram_Model/ngram_vect.pkl', 'wb'))
+pickle.dump(SVM, open('ngram_Model/ngram_attribution.pkl', 'wb'))
 log.info("successfully created ngram model with SVM\n1.ngram vector file created\n2.ngram model saved with pickle")

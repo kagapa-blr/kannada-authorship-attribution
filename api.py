@@ -39,13 +39,13 @@ def ngram():
         root_ngram = os.path.dirname(__file__)
         poly_model_path = "../ngram_Model"
     
-        ngram_model_file_path = os.path.join(root_ngram, poly_model_path+"/ngram_attribution.pkl")
+        ngram_model_file_path ="ngram_Model/ngram_attribution.pkl" #os.path.join(root_ngram, poly_model_path+"/ngram_attribution.pkl")
         ngram_clf = pickle.load(open(ngram_model_file_path,'rb'))
 
-        ngram_loaded_vec_file = os.path.join(root_ngram, poly_model_path+"/ngram_vect.pkl")
+        ngram_loaded_vec_file = "ngram_Model/ngram_vect.pkl" #os.path.join(root_ngram, poly_model_path+"/ngram_vect.pkl")
         ngram_loaded_vec = pickle.load(open(ngram_loaded_vec_file, "rb"))
 
-        ngram_model_accuracy_file = os.path.join(root_ngram, poly_model_path+"/ngram_model_Acuuracy.pkl")
+        ngram_model_accuracy_file ="ngram_Model/ngram_model_Acuuracy.pkl" #os.path.join(root_ngram, poly_model_path+"/ngram_model_Acuuracy.pkl")
         ngram_model_Acuuracy = pickle.load(open(ngram_model_accuracy_file, "rb"))
         
         log.info("ngram model and vector files successfully imported for prediction...")
@@ -92,9 +92,9 @@ def polysemy():
          
         root = os.path.dirname(__file__)
         poly_model_path = "../polysemy_Model"
-        poly_model_file = os.path.join(root, poly_model_path+"/poly_finalized_model.sav")
-        poly_vec_file = os.path.join(root, poly_model_path+"/polysem_vect.pkl")
-        poly_accuracy_file = os.path.join(root, poly_model_path+"/accuracy.p")
+        poly_model_file ="polysemy_Model/poly_finalized_model.sav" #os.path.join(root, poly_model_path+"/poly_finalized_model.sav")
+        poly_vec_file ="polysemy_Model/polysem_vect.pkl" #os.path.join(root, poly_model_path+"/polysem_vect.pkl")
+        poly_accuracy_file = "polysemy_Model/accuracy.p"#os.path.join(root, poly_model_path+"/accuracy.p")
         
         poly_clf = pickle.load(open(poly_model_file,'rb'))
         poly_loaded_vec = pickle.load(open(poly_vec_file,'rb'))

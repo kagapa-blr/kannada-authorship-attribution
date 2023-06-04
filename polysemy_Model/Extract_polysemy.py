@@ -44,6 +44,7 @@ log.info("Data cleaning completed")
 
 #kannada wordnet for extracting polysemy words
 iwn = pyiwn.IndoWordNet(lang=pyiwn.Language.KANNADA)
+
 log.info("polysemy words extracting started.... this will take few mins ...please wait")
 def poly_non_poly_words(dict):
     authors_dict=dict
@@ -98,7 +99,7 @@ def FinalDf():
     del poly_emotion_df['original_text']
     poly_emotion_df['clean_authors'] = df_instance['authors_clean']
 
-    poly_emotion_df.to_csv("polysemy_extracted.csv")
+    poly_emotion_df.to_csv("polysemy_Model/polysemy_extracted.csv")
     log.info("final csv file created successfully ....")
     return
 FinalDf()

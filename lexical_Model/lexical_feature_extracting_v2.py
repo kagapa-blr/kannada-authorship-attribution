@@ -22,7 +22,7 @@ log = logging.getLogger('Lexical features extracting new version ....')
 log.setLevel(logging.DEBUG)
 
 log.info("importing libraries finished...")
-file_path = "./Dataset/stopwords.txt"
+file_path = "Dataset/stopwords.txt"
 file = open(file_path, encoding="utf8")
 stop_words=file.read()
 stopword = list(stop_words)
@@ -289,7 +289,7 @@ def FeatureExtration(text):
 
 
 def text_process(text):
-    log.info("data cleaning processing ......")
+    log.info("data cleaning processing ......file no:")
     pp = '!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
     nopunct = "".join([char for char in text if char not in pp])
     tokens = nltk.word_tokenize(nopunct)
@@ -313,11 +313,14 @@ y =df_instance["authors_clean"]
 author_fvs={}
 feature_vectors=[]
 def creat_bin_file():
+    file_count = 0
     for (text,author) in zip(X, y):
-        clean_sentence = text_process(text=text)
+        #clean_sentence = text_process(text=text)
         # author_fvs[author]=FeatureExtration(text)
+        log.info("cleaning & feature extracting file no: "+str(file_count))
         feature_vectors.append(FeatureExtration(text))
-    pickle.dump(feature_vectors,open('lexical_features_new.pkl', 'wb'))
+        file_count+=1
+    pickle.dump(feature_vectors,open('lexical_Model/lexical_features_new.pkl', 'wb'))
     print("successfully extracted all the features\n \n ")
     return feature_vectors
 

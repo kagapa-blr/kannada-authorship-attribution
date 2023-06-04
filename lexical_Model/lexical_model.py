@@ -24,7 +24,7 @@ df_instance=pd.read_csv(abs_file_path, encoding='utf-8')
 del df_instance['Unnamed: 0']
 
 log.info("reading feature vector file ..")
-lexical_features_vec = pickle.load(open("../lexical_Model/lexical_features_new.pkl",'rb'))
+lexical_features_vec = pickle.load(open("lexical_Model/lexical_features_new.pkl",'rb'))
 
 final_feature_vec=[]
 for i in range(len(lexical_features_vec)):
@@ -56,8 +56,8 @@ print("Taining Accuracy :",train_acc)
 print("Testing Accuracy: ",test_acc)
 
 
-pickle.dump(model, open('lexical_attribution.pkl','wb'))
+pickle.dump(model, open('lexical_Model/lexical_attribution.pkl','wb'))
 store_acc={"Training Accuracy":train_acc, "Testing Accuracy":test_acc}
-pickle.dump(store_acc, open('Accuracy_saved.pkl','wb'))
+pickle.dump(store_acc, open('lexical_Model/Accuracy_saved.pkl','wb'))
 #predictions = model.predict(X_test)
 #print(classification_report(y_test, predictions))
